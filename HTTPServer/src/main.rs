@@ -5,17 +5,34 @@ use std::io::prelude::*;
 use std::net::TcpListener;
 use std::net::TcpStream;
 use std::str;
+use std::sync::Arc;
+use threadpool::ThreadPool;
 
 fn main() {
     const HOST: &str = "127.0.0.1";
     const PORT: &str = "8477";
     let end_point: String = HOST.to_owned() + ":" + PORT;
+
+    // Crear el listener del servidor
     let listener = TcpListener::bind(end_point).unwrap();
     println!("Web server is listening at port {}", PORT);
 
+    // Crear un pool de hilos con 4 hilos
+    let pool = ThreadPool::new(4);
+
+    // Utilizar Arc para permitir que múltiples hilos compartan el listener
+    let listener = Arc::new(listener);
+
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-        handle_connection(stream);
+
+        // Clonar el TcpListener para pasarlo al hilo
+        let listener = Arc::clone(&listener);
+
+        // Enviar la conexión al thread pool para que sea procesada en un hilo
+        pool.execute(move || {
+            handle_connection(stream);
+        });
     }
 }
 
