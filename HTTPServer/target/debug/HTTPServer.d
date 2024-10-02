@@ -1,1 +1,1 @@
-C:\Users\Dominic\OneDrive\ -\ Estudiantes\ ITCR\Escritorio\Proyecto\ SO\HTTP-Server\HTTPServer\target\debug\HTTPServer.exe: C:\Users\Dominic\OneDrive\ -\ Estudiantes\ ITCR\Escritorio\Proyecto\ SO\HTTP-Server\HTTPServer\src\main.rs
+C:\Users\maria\Desktop\New\ folder\HTTP-Server\HTTPServer\target\debug\HTTPServer.exe: C:\Users\maria\Desktop\New\ folder\HTTP-Server\HTTPServer\src\main.rs
