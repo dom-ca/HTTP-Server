@@ -99,25 +99,25 @@ El servidor utiliza cookies para gestionar sesiones de usuarios. Las cookies per
 Para las pruebas de estrés del servidor se emplearon un conjunto de diversas pruebas unitarias, que se ejecutan en las herramientas de **Postman** y **Jmeter** para simular concurrencia de varios usuarios y probar el comportamiento de las operaciones básicas del servidor.
 
 - **Postman**: En esta herramienta se implementaron las pruebas de estrés y las operaciones básicas en diferentes colecciones, además de las pruebas para el funcionamiento de las Cookies (Login- Logout).
-  ![alt text](images/image.png)
+  ![alt text](Images/image.png)
   Para ejecutar las pruebas, hay que darle click derecho a la colección que se desea ejecutar y seleccionar la opción de "Run Collection".
-  ![alt text](images/image-1.png)
+  ![alt text](Images/image-1.png)
   Posteriormente se digita una cantidad de iteraciones, esto indica la cantidad de veces que se quiere ejecutar estas pruebas seleccionadas y por último se indica el delay, en este caso será un valor de cero para que se ejecuten al mismo tiempo.
 - **Jmeter**:En el caso de esta herramienta se implementaron unas pruebas de concurrencia adicionales, la ventaja de este programa es que se pueden visualizar los reportes de las pruebas, de tal manera que permite saber cual hilo o request fue el que falló exactamente y como se comportan los requests.
-![alt text](images/image-2.png)
+![alt text](Images/image-2.png)
 Para estas pruebas solo basta con elegir una cantidad de usuarios(threads) por cada grupo de hilos y luego se presiona el botón de "Start".
 
 #### Estructura de directorios y archivos
 
 La disposición del proyecto está organizada de la siguiente manera:
-![alt text](images/image-3.png)
+![alt text](Images/image-3.png)
 
 Dentro del archivo Zip Principal se encuentran dos carpetas, la carpeta "HTTP-Server" es el repositorio principal del servidor, ahí se encuentra el código fuente, el mark down de la documentación y las imagenes empleadas para el mismo.
 
-![alt text](images/image-4.png)
+![alt text](Images/image-4.png)
 Dentro del repositorio principal "HTTPServer" se encuentra, la carpeta "src" con un solo archivo principal del código fuente, luego la carpeta target: Es donde Cargo (el gestor de paquetes de Rust) coloca los archivos compilados. Aquí se guarda el resultado del proceso de construcción del proyecto. Luego el Archivo Cargo.toml que contiene la configuración del proyecto Rust, como sus dependencias, la versión del proyecto y metadatos importantes. El archivo Cargo.lock se encarga de guardar las versiones específicas de las dependencias del proyecto para garantizar que las futuras compilaciones utilicen las mismas versiones, lo que asegura consistencia. Por último el archivo index.html que generalmente es el archivo principal de una página web. Contiene la estructura y el contenido básico de una página, que los navegadores web interpretan para mostrar la interfaz visual.
 
-![alt text](images/image-5.png)
+![alt text](Images/image-5.png)
 
 Por otro lado, la carpeta de "Pruebas Unitarias y Resultados", tiene adentro tres archivos para las pruebas unitarias, dos de postman y uno del plan de pruebas de concurrencia de Jmeter, por último posee una carpeta con screenshots de los resultados de estas pruebas.
 
